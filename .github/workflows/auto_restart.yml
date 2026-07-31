@@ -16,4 +16,5 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          script: sudo systemctl restart restart_site.service
+          script: git pull && sudo systemctl restart restart_site.service
+          script_path: /home/artem_L/TgCcpk
