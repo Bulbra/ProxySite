@@ -14,3 +14,4 @@ async def home():
     proxies = await load_proxies()
     result = await start(proxies, my_concurrency, my_timeout, url=my_url)
     return {"result": result}
+
