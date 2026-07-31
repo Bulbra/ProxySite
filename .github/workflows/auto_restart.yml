@@ -4,6 +4,12 @@ on:
     types: [ opened, reopened, synchronize ]
     branches:
       - main
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: "sadasd"
+        required: true
+        default: "debug"
 jobs:
   build:
     name: Build
@@ -17,4 +23,3 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: cd ProxySite && git pull && sudo systemctl restart restart_site.service
-          
