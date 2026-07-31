@@ -17,4 +17,4 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: git pull && sudo systemctl restart restart_site.service
-          script_path: /home/artem_L/TgCcpk
+          script_path: /home/artem_L/ProxySite
