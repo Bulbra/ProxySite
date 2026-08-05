@@ -3,7 +3,13 @@ on:
   pull_request:
     types: [ opened, reopened, synchronize ]
     branches:
-      - master
+      - main
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: "sadasd"
+        required: true
+        default: "debug"
 jobs:
   build:
     name: Build
@@ -16,5 +22,4 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          script: git pull && sudo systemctl restart restart_site.service
-          script_path: /home/artem_L/TgCcpk
+          script: cd ProxySite && git pull && sudo systemctl restart restart_site.service
